@@ -7,13 +7,13 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb+srv://aktyagi18052002:HQ3R4DYMJPqOXYrb@cluster0.ridld1p.mongodb.net/test', {
+mongoose.connect('mongodb+srv://tyagiankit006_db_user:jKrPfdzy1Qh2VLJf@ankit-test-cluseter17-0.bixuqkz.mongodb.net/todolist', {
 	useNewUrlParser: true, 
 	useUnifiedTopology: true 
 }).then(() => console.log("Connected to MongoDB")).catch(console.error);
 
 // Models
-const Todo = require('./models/Todo');
+const Todo = require('../models/Todo');
 
 app.get('/todos', async (req, res) => {
 	const todos = await Todo.find();
